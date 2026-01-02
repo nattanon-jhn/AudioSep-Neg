@@ -1,0 +1,74 @@
+---
+task_name: AudioSep
+
+# ============================================================
+# DATA
+# ============================================================
+data:
+  datafiles:
+    - "datafiles/train.json"
+
+  sampling_rate: 32000
+  segment_seconds: 5
+
+  loudness_norm:
+    lower_db: -10
+    higher_db: 10
+
+  max_mix_num: 2
+
+
+# ============================================================
+# MODEL
+# ============================================================
+model:
+  query_net: CLAP
+  condition_size: 512
+  model_type: ResUNet30
+  input_channels: 1
+  output_channels: 1
+
+  resume_checkpoint: ""          # ← ใส่ ckpt จาก Step 2
+  use_text_ratio: 1.0
+
+
+# ============================================================
+# TRAINING (STEP 3 – LoRA / FiLM)
+# ============================================================
+train:
+
+  # -------------------------------
+  # Optimizer
+  # -------------------------------
+  optimizer:
+    optimizer_type: AdamW
+    decoder_learning_rate: 5e-5
+    film_learning_rate: 2e-5
+    lora_learning_rate: 1e-4
+    head_learning_rate: 5e-5
+
+    warm_up_steps: 2000
+    reduce_lr_steps: 200000
+    lr_lambda_type: linear_warm_up
+
+    lora_r: 4
+    lora_alpha: 16.0
+    #lora_train_base: false
+  num_nodes: 1
+  num_workers: 6
+
+  # 🔥 Best loss for Step 3
+  loss_type: l1_wav_energy_multiscale
+
+  sync_batchnorm: True
+  batch_size_per_device: 6
+
+  # -------------------------------
+  # Step-based training control
+  # -------------------------------
+  steps_per_epoch: 1000
+  evaluate_step_frequency: 1000
+  save_step_frequency: 1000
+  early_stop_steps: 20000
+
+  random_seed: 1234

@@ -1,0 +1,8 @@
+global_step = 21000
+batch_size  = 6
+prompt_type = ['negative', 'negation', 'contrastive', 'positive', 'contrastive', 'contrastive']
+route_list  = ['BG', 'BG', 'FG', 'FG', 'FG', 'FG']
+idx_fg      = 2
+idx_bg      = 0
+text_pos    = ['', '', 'footsteps', 'vacuum cleaner', 'airplane', 'brushing teeth']
+text_neg    = ['door wood knock', 'toilet flush', 'vacuum cleaner', '', 'brushing teeth', 'toilet flush']

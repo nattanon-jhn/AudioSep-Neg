@@ -1,0 +1,8 @@
+global_step = 12000
+batch_size  = 6
+prompt_type = ['negative', 'negation', 'negation', 'contrastive', 'negation', 'negative']
+route_list  = ['BG', 'BG', 'BG', 'FG', 'BG', 'BG']
+idx_fg      = 3
+idx_bg      = 0
+text_pos    = ['', '', '', 'keyboard typing', '', '']
+text_neg    = ['train', 'laughing', 'glass breaking', 'glass breaking', 'laughing', 'siren']

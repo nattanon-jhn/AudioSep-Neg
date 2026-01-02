@@ -1,0 +1,8 @@
+global_step = 38000
+batch_size  = 6
+prompt_type = ['contrastive', 'negative', 'contrastive', 'negation', 'negative', 'positive']
+route_list  = ['FG', 'BG', 'FG', 'BG', 'BG', 'FG']
+idx_fg      = 0
+idx_bg      = 1
+text_pos    = ['washing machine', '', 'brushing teeth', '', '', 'drinking sipping']
+text_neg    = ['rain', 'rain', 'drinking sipping', 'sheep', 'hen', '']

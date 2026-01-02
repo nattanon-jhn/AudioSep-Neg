@@ -1,0 +1,8 @@
+global_step = 20000
+batch_size  = 6
+prompt_type = ['contrastive', 'contrastive', 'contrastive', 'contrastive', 'negative', 'contrastive']
+route_list  = ['FG', 'FG', 'FG', 'FG', 'BG', 'FG']
+idx_fg      = 0
+idx_bg      = 4
+text_pos    = ['sheep', 'church bells', 'fireworks', 'fireworks', '', 'mouse click']
+text_neg    = ['fireworks', 'fireworks', 'mouse click', 'glass breaking', 'glass breaking', 'fireworks']

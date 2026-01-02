@@ -1,0 +1,8 @@
+global_step = 33000
+batch_size  = 6
+prompt_type = ['negation', 'positive', 'negation', 'negative', 'negative', 'contrastive']
+route_list  = ['BG', 'FG', 'BG', 'BG', 'BG', 'FG']
+idx_fg      = 1
+idx_bg      = 0
+text_pos    = ['', 'insects', '', '', '', 'frog']
+text_neg    = ['cat', '', 'keyboard typing', 'siren', 'airplane', 'insects']

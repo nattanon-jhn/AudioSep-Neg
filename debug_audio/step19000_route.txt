@@ -1,0 +1,8 @@
+global_step = 19000
+batch_size  = 6
+prompt_type = ['negation', 'contrastive', 'positive', 'negative', 'negation', 'negative']
+route_list  = ['BG', 'FG', 'FG', 'BG', 'BG', 'BG']
+idx_fg      = 1
+idx_bg      = 0
+text_pos    = ['', 'airplane', 'door wood knock', '', '', '']
+text_neg    = ['door wood knock', 'fireworks', '', 'church bells', 'cow', 'fireworks']

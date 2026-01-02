@@ -1,0 +1,8 @@
+global_step = 27000
+batch_size  = 6
+prompt_type = ['positive', 'negation', 'contrastive', 'negative', 'negative', 'contrastive']
+route_list  = ['FG', 'BG', 'FG', 'BG', 'BG', 'FG']
+idx_fg      = 0
+idx_bg      = 1
+text_pos    = ['can opening', '', 'pouring water', '', '', 'sneezing']
+text_neg    = ['', 'siren', 'sneezing', 'train', 'sheep', 'sheep']

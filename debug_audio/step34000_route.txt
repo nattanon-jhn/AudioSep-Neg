@@ -1,0 +1,8 @@
+global_step = 34000
+batch_size  = 6
+prompt_type = ['positive', 'contrastive', 'positive', 'negative', 'negation', 'positive']
+route_list  = ['FG', 'FG', 'FG', 'BG', 'BG', 'FG']
+idx_fg      = 0
+idx_bg      = 3
+text_pos    = ['footsteps', 'fireworks', 'toilet flush', '', '', 'rooster']
+text_neg    = ['', 'fireworks', '', 'washing machine', 'fireworks', '']

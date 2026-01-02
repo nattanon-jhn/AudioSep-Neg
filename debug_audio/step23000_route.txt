@@ -1,0 +1,8 @@
+global_step = 23000
+batch_size  = 6
+prompt_type = ['contrastive', 'contrastive', 'contrastive', 'negative', 'positive', 'negative']
+route_list  = ['FG', 'FG', 'FG', 'BG', 'FG', 'BG']
+idx_fg      = 0
+idx_bg      = 3
+text_pos    = ['mouse click', 'can opening', 'train', '', 'car horn', '']
+text_neg    = ['glass breaking', 'car horn', 'mouse click', 'glass breaking', '', 'crackling fire']

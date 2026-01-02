@@ -1,0 +1,8 @@
+global_step = 3000
+batch_size  = 6
+prompt_type = ['contrastive', 'contrastive', 'negative', 'negation', 'negation', 'contrastive']
+route_list  = ['FG', 'FG', 'BG', 'BG', 'BG', 'FG']
+idx_fg      = 0
+idx_bg      = 2
+text_pos    = ['footsteps', 'rooster', '', '', '', 'cow']
+text_neg    = ['cow', 'brushing teeth', 'clapping', 'sea waves', 'brushing teeth', 'rooster']

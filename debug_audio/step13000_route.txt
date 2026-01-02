@@ -1,0 +1,8 @@
+global_step = 13000
+batch_size  = 6
+prompt_type = ['contrastive', 'negation', 'negation', 'contrastive', 'negative', 'positive']
+route_list  = ['FG', 'BG', 'BG', 'FG', 'BG', 'FG']
+idx_fg      = 0
+idx_bg      = 1
+text_pos    = ['coughing', '', '', 'crow', '', 'chirping birds']
+text_neg    = ['siren', 'clock tick', 'siren', 'rain', 'rain', '']

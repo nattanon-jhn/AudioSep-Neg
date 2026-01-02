@@ -1,0 +1,8 @@
+global_step = 41000
+batch_size  = 6
+prompt_type = ['negation', 'negative', 'contrastive', 'positive', 'negation', 'negation']
+route_list  = ['BG', 'BG', 'FG', 'FG', 'BG', 'BG']
+idx_fg      = 2
+idx_bg      = 0
+text_pos    = ['', '', 'dog', 'brushing teeth', '', '']
+text_neg    = ['engine', 'engine', 'brushing teeth', '', 'coughing', 'dog']

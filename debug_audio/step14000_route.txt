@@ -1,0 +1,8 @@
+global_step = 14000
+batch_size  = 6
+prompt_type = ['negative', 'negative', 'positive', 'positive', 'negation', 'negative']
+route_list  = ['BG', 'BG', 'FG', 'FG', 'BG', 'BG']
+idx_fg      = 2
+idx_bg      = 0
+text_pos    = ['', '', 'door wood creaks', 'keyboard typing', '', '']
+text_neg    = ['rooster', 'car horn', '', '', 'car horn', 'snoring']

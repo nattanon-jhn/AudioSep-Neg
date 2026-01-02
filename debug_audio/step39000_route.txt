@@ -1,0 +1,8 @@
+global_step = 39000
+batch_size  = 6
+prompt_type = ['contrastive', 'positive', 'negative', 'negation', 'negation', 'positive']
+route_list  = ['FG', 'FG', 'BG', 'BG', 'BG', 'FG']
+idx_fg      = 0
+idx_bg      = 2
+text_pos    = ['fireworks', 'helicopter', '', '', '', 'sea waves']
+text_neg    = ['crow', '', 'train', 'pouring water', 'crow', '']

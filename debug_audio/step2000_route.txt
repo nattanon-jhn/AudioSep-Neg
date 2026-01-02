@@ -1,0 +1,8 @@
+global_step = 2000
+batch_size  = 6
+prompt_type = ['positive', 'positive', 'negation', 'positive', 'contrastive', 'positive']
+route_list  = ['FG', 'FG', 'BG', 'FG', 'FG', 'FG']
+idx_fg      = 0
+idx_bg      = 2
+text_pos    = ['clapping', 'crying baby', '', 'dog', 'rain', 'crickets']
+text_neg    = ['', '', 'chirping birds', '', 'crying baby', '']

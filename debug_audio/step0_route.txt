@@ -1,0 +1,8 @@
+global_step = 0
+batch_size  = 6
+prompt_type = ['positive', 'contrastive', 'contrastive', 'negative', 'negation', 'negation']
+route_list  = ['FG', 'FG', 'FG', 'BG', 'BG', 'BG']
+idx_fg      = 0
+idx_bg      = 3
+text_pos    = ['crying baby', 'vacuum cleaner', 'engine', '', '', '']
+text_neg    = ['', 'rain', 'pig', 'rain', 'pig', 'crying baby']

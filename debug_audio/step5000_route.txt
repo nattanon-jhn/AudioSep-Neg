@@ -1,0 +1,8 @@
+global_step = 5000
+batch_size  = 6
+prompt_type = ['contrastive', 'contrastive', 'positive', 'negative', 'negation', 'contrastive']
+route_list  = ['FG', 'FG', 'FG', 'BG', 'BG', 'FG']
+idx_fg      = 0
+idx_bg      = 3
+text_pos    = ['mouse click', 'sea waves', 'clock tick', '', '', 'church bells']
+text_neg    = ['church bells', 'mouse click', '', 'hen', 'rain', 'sea waves']

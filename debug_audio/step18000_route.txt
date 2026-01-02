@@ -1,0 +1,8 @@
+global_step = 18000
+batch_size  = 6
+prompt_type = ['negative', 'negation', 'contrastive', 'positive', 'contrastive', 'contrastive']
+route_list  = ['BG', 'BG', 'FG', 'FG', 'FG', 'FG']
+idx_fg      = 2
+idx_bg      = 0
+text_pos    = ['', '', 'chirping birds', 'water drops', 'insects', 'sheep']
+text_neg    = ['water drops', 'wind', 'insects', '', 'chirping birds', 'wind']

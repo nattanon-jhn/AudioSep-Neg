@@ -1,0 +1,8 @@
+global_step = 35000
+batch_size  = 6
+prompt_type = ['negative', 'negation', 'negation', 'negation', 'positive', 'negative']
+route_list  = ['BG', 'BG', 'BG', 'BG', 'FG', 'BG']
+idx_fg      = 4
+idx_bg      = 0
+text_pos    = ['', '', '', '', 'car horn', '']
+text_neg    = ['sheep', 'clock tick', 'helicopter', 'chirping birds', '', 'chainsaw']

@@ -1,0 +1,8 @@
+global_step = 4000
+batch_size  = 6
+prompt_type = ['negation', 'contrastive', 'positive', 'negative', 'positive', 'positive']
+route_list  = ['BG', 'FG', 'FG', 'BG', 'FG', 'FG']
+idx_fg      = 1
+idx_bg      = 0
+text_pos    = ['', 'keyboard typing', 'pouring water', '', 'glass breaking', 'fireworks']
+text_neg    = ['door wood knock', 'door wood knock', '', 'can opening', '', '']

@@ -1,0 +1,8 @@
+global_step = 29000
+batch_size  = 6
+prompt_type = ['negative', 'negation', 'negative', 'negative', 'contrastive', 'negation']
+route_list  = ['BG', 'BG', 'BG', 'BG', 'FG', 'BG']
+idx_fg      = 4
+idx_bg      = 0
+text_pos    = ['', '', '', '', 'clock tick', '']
+text_neg    = ['thunderstorm', 'clapping', 'clapping', 'cow', 'clapping', 'hand saw']

@@ -1,0 +1,8 @@
+global_step = 22000
+batch_size  = 6
+prompt_type = ['contrastive', 'negative', 'contrastive', 'positive', 'negation', 'negation']
+route_list  = ['FG', 'BG', 'FG', 'FG', 'BG', 'BG']
+idx_fg      = 0
+idx_bg      = 1
+text_pos    = ['door wood creaks', '', 'chainsaw', 'laughing', '', '']
+text_neg    = ['sheep', 'water drops', 'water drops', '', 'door wood knock', 'sheep']

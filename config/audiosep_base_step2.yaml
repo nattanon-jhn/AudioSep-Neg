@@ -1,0 +1,64 @@
+---
+task_name: AudioSep
+
+# ============================================================
+# DATA
+# ============================================================
+data:
+  datafiles:
+    - "datafiles/train.json"
+
+  sampling_rate: 32000
+  segment_seconds: 5
+
+  # ใช้ใน SegmentMixer
+  loudness_norm:
+    lower_db: -10
+    higher_db: 10
+
+  max_mix_num: 2
+
+
+# ============================================================
+# MODEL
+# ============================================================
+model:
+  query_net: CLAP                 # ใช้ CLAP จริงใน Step 2
+  condition_size: 512
+  model_type: ResUNet30
+  input_channels: 1
+  output_channels: 1
+
+  resume_checkpoint: ""           # ใส่ ckpt จาก step1 ได้
+  use_text_ratio: 1.0             # text-only conditioning เต็มรูปแบบ
+
+
+# ============================================================
+# TRAINING (STEP 2)
+# ============================================================
+train:
+  optimizer:
+    optimizer_type: AdamW
+    learning_rate: 5e-5           # Step2 LR (ต่ำกว่า step1)
+    warm_up_steps: 1000
+    reduce_lr_steps: 100000
+    lr_lambda_type: linear_warm_up
+
+  num_nodes: 1
+  num_workers: 6
+
+  # 🔥 Step2 recommended loss
+  loss_type: l1_wav_energy_multiscale
+
+  sync_batchnorm: True
+  batch_size_per_device: 6
+
+  # -------------------------------
+  # Training control (step-based)
+  # -------------------------------
+  steps_per_epoch: 1000            # ใช้เพื่อ log / visualize
+  evaluate_step_frequency: 1000
+  save_step_frequency: 1000
+  early_stop_steps: 15000
+
+  random_seed: 1234
