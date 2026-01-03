@@ -166,6 +166,9 @@ def separate_audio(
 
         # ---- Routing (same rule as training) ----
         route = model._route_from_prompt_type(pr.cls)
+        #fallback_neg = bool(getattr(pr, "negative_sentence", None))
+        #route = model._route_from_prompt_type(pr.cls, fallback_neg=fallback_neg)
+
         out_wave = y_bg if route == "BG" else y_fg
 
         out_wave = out_wave.squeeze().cpu().numpy().astype(np.float32)
