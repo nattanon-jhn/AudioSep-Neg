@@ -1,3 +1,7 @@
+
+Folder highlights
+Evaluation data from an AudioSep-Neg project includes results for positive, negative, contrastive, and negation audio separation tasks.
+
 import os
 import datetime
 import json
@@ -192,3 +196,22 @@ def load_ss_model(
     )
 
     return pl_model
+    
+# ============================================================
+# Addition for Evaluation
+# ============================================================
+def get_mean_sdr_from_dict(sdr_dict):
+    r"""Calculate mean SDR from a dictionary.
+    
+    Args:
+        sdr_dict (dict): {class_id: sdr_value}
+        
+    Returns:
+        mean_sdr (float)
+    """
+    sdrs = []
+    for class_id in sdr_dict.keys():
+        if not np.isnan(sdr_dict[class_id]):
+            sdrs.append(sdr_dict[class_id])
+    
+    return np.mean(sdrs)
