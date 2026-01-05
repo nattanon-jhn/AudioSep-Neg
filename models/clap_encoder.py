@@ -65,15 +65,30 @@ class CLAP_Encoder(nn.Module):
 
         print(f"🔄 Loading CLAP pretrained weights: {ckpt_path}")
         try:
-            ckpt = torch.load(ckpt_path, map_location="cpu")
-            state_dict = ckpt.get("model", ckpt)
+            # ✅ PyTorch 2.6 legacy ckpt ต้องใช้ weights_only=False
+            try:
+                ckpt = torch.load(ckpt_path, map_location="cpu", weights_only=False)
+            except TypeError:
+                # torch รุ่นเก่าไม่มี arg weights_only
+                ckpt = torch.load(ckpt_path, map_location="cpu")
+
+            # ดึง state_dict ให้ robust
+            if isinstance(ckpt, dict):
+                # บางไฟล์ใช้ key "model", บางไฟล์ใช้ "state_dict"
+                state_dict = ckpt.get("model", ckpt.get("state_dict", ckpt))
+            else:
+                state_dict = ckpt
+
             missing, unexpected = self.model.load_state_dict(state_dict, strict=False)
-            print("   ✔ Loaded CLAP weights")
-            print("   Missing keys:", missing)
-            print("   Unexpected keys:", unexpected)
+            print("   ✔ Loaded CLAP weights (legacy load)")
+            if len(missing) > 0:
+                print("   Missing keys:", missing[:20], ("..." if len(missing) > 20 else ""))
+            if len(unexpected) > 0:
+                print("   Unexpected keys:", unexpected[:20], ("..." if len(unexpected) > 20 else ""))
+
         except Exception as e:
-            print(f"   ⚠️ Failed to load CLAP pretrained weights: {e}")
-            print("   จะใช้ random weights แทน (คุณภาพจะด้อยลง)")
+            print(f"   ⚠️ Failed to load CLAP pretrained weights: {repr(e)}")
+            print("   ⚠️ Using random-initialized CLAP (คุณภาพจะด้อยลง)")
 
     # -------------------------------------------------------
     # Utility
